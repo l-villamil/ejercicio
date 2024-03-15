@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Espacios from './Espacios.js';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Detalle from "./Detalle.js"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Espacios/>}/>
+        <Route path="/espacios" element={<Espacios/>}/>
+        <Route path="/espacios/:espacioId" element={<Detalle />}/>
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
